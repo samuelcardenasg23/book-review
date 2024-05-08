@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Book Reviews</title>
+    @yield('styles')
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 
     {{-- blade-formatter-disable --}}
