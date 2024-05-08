@@ -35,6 +35,9 @@ class ReviewController extends Controller
 
         $book->reviews()->create($data);
 
+        // Flash success message to session
+        session()->flash('success', 'Review added successfully!');
+
         return redirect()->route('books.show', $book);
     }
 

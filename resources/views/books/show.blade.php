@@ -1,6 +1,27 @@
 @extends('layouts.app')
 
+@section('styles')
+    <style>
+        /* styles.css or app.css */
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+    </style>
+@endsection
+
 @section('content')
+    @if (session()->has('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="mb-4">
         <h1 class="mb-2 text-2xl">{{ $book->title }}</h1>
 
