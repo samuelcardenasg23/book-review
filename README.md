@@ -9,7 +9,7 @@
 
 ## Book Review Project
 
-The Book Review project! This web application allows users to browse books, read reviews, and add their own reviews to books they've read.
+The Book Review project is a Laravel-based web application allows users to browse books, read reviews, and add their own reviews to books they've read.
 
 ## Features
 
