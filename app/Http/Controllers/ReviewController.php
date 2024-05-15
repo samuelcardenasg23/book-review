@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Spatie\WebhookServer\WebhookCall;
 
 class ReviewController extends Controller
 {
@@ -42,6 +43,12 @@ class ReviewController extends Controller
 
         // Flash success message to session
         session()->flash('success', 'Review added successfully!');
+
+        WebhookCall::create()
+            ->url('http://localhost:8001/api/webhook-receiving-url')
+            ->payload(['book' => $data])
+            ->useSecret('mysecretkeymalo')
+            ->dispatch();
 
         return redirect()->route('books.show', $book);
     }
